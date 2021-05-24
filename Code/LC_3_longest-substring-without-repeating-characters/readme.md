@@ -1,5 +1,7 @@
 ## resource code
 
+题目：[leetcode-3](https://leetcode-cn.com/problems/strange-printer/)
+
 ```java
 package com.zzy;
 
