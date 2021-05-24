@@ -1,6 +1,6 @@
 ## resource code
 
-题目：[leetcode-3](https://leetcode-cn.com/problems/strange-printer/)
+题目：[无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
 
 ```java
 package com.zzy;
