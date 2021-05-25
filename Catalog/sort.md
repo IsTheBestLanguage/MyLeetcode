@@ -7,7 +7,7 @@
 
 <!-- GFM-TOC -->
 
-### 合并k个升序链表
+### 23.合并k个升序链表
 ```java
 package zzy;
 
