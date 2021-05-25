@@ -10,7 +10,7 @@
 ### 数组与矩阵
 []
 ### 动态规划
-[]
+[动态规划](https://github.com/IsTheBestLanguage/MyLeetcode/edit/main/Catalog/dynamic_programming.md)
 ### 搜索
 []
 ### 贪心
