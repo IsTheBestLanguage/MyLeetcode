@@ -8,7 +8,10 @@
     * [斐波那契数列](#斐波那契数列)
         * [413. 等差数列划分](#413-等差数列划分)
     * [矩阵路径](#矩阵路径)
-        * [1. 矩阵的最小路径和](#1-矩阵的最小路径和)
+        * [1. xxxxxx](#1-矩阵的最小路径和)
+        * [2. xxxxxx](#2-矩阵的总路径数)
+    * [递增子序列](#递增子序列)
+        * [646. 最长数对链](#646-最长数对链)
         * [2. 矩阵的总路径数](#2-矩阵的总路径数)
     
 <!-- GFM-TOC -->
@@ -47,3 +50,34 @@ asdsadsada
 jtyh
 ertfwegfew
 dfsdvsdvf
+
+
+### 646-最长数对链
+```java
+public int findLongestChain(int[][] pairs) {
+		int length = pairs.length;
+		if(length == 1) {
+			return 1;
+		}
+		Arrays.sort(pairs,(o1,o2)->(o1[0]-o2[0]));
+		
+		int[] dp = new int[length];
+		Arrays.fill(dp, 1);
+		for(int i=1;i<length;++i) {
+			for(int j=0;j<i;j++) {
+				if(pairs[i][0] > pairs[j][1]) {
+				dp[i] = Math.max(dp[i], dp[j]+1);				
+				}
+			}
+			
+			
+		}
+		
+		int ans = 0;
+		for (int i : dp) {
+			ans = i > ans ? i : ans;
+		}
+		return ans;
+		
+    }
+    ```
