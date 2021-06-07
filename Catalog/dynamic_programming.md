@@ -88,10 +88,33 @@ public int findLongestChain(int[][] pairs) {
  ```
  
 动态规划 + 二分查找：在可取的的候选项里取第二个数最小的，即使得下一个可加入项的可选范围最大；  
+定义一个 tails 数组，其中 tails[i] 存储长度为 i + 1 的最长递增子序列的最后一个元素。对于一个元素 x，
+- 如果它大于 tails 数组所有的值，那么把它添加到 tails 后面，表示最长递增子序列长度加 1；
+- 如果 tails[i-1] \< x \<= tails[i]，那么更新 tails[i] = x。   
 时间复杂度：遍历 n 个数据，每次遍历通过 O(log n) 时间找到候选项里第二数最小的，故为 O(n log n)
 ```java
- 
-···
+
+```
   
 贪心：先将数对按右边界排序，转化为求不重复区间个数的问题；相当于每次更新边界(加入新数对)都在可取的的候选项里取第二个数最小的，；   
-时间复杂度：排序用 O(n log n)，贪心只需遍历 n 个数据，即为 O(n log n)
+时间复杂度：排序用 O(n log n)，贪心只需遍历 n 个数据，即为 O(n log n)   
+```java
+//引入贪心：在可取的的候选项里取最小的，即下一个可加入项的可选范围最大
+//10ms 38.3MB
+public int findLongestChain3(int[][] pairs) {
+	int length = pairs.length;
+	if(length == 1) {
+		return 1;
+	}
+	Arrays.sort(pairs,(o1,o2)->(o1[1]-o2[1]));
+	int bound = pairs[0][1];
+	int count = 1;
+	for(int[] pair:pairs) {
+		if(pair[0] > bound) {
+			count++;
+			bound = Math.max(bound, pair[1]);
+		}
+	}
+	return count;
+}
+```
