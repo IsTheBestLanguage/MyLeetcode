@@ -58,6 +58,7 @@ dfsdvsdvf
 ### 646-最长数对链  
 
 动态规划：dp[i]保存以i结尾的链的最长长度，从已遍历过的的dp项里选取能形成数对链且最大的的项  
+时间复杂度：遍历 n 个数据，每次遍历向前遍历至多 n-1 个数据，故为O(n)
 
 ```java
 public int findLongestChain(int[][] pairs) {
@@ -83,4 +84,11 @@ public int findLongestChain(int[][] pairs) {
 	}
 	return ans;
 		
-    }
+    } 
+ ```
+ 
+ 动态规划 + 贪心：在可取的的候选项里取第二个数最小的，即使得下一个可加入项的可选范围最大；
+ 时间复杂度：遍历 n 个数据，每次遍历通过 O(log n) 时间找到候选项里第二数最小的，故为 O(n log n)
+ ```java
+ 
+   
