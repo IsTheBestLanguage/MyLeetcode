@@ -53,31 +53,31 @@ dfsdvsdvf
 
 
 ### 646-最长数对链
+
+dp[i]保存以i结尾的链的最长长度，推进的过程为：从已遍历过的的dp项里选取能形成数对链且最大的的项
+
 ```java
 public int findLongestChain(int[][] pairs) {
-		int length = pairs.length;
-		if(length == 1) {
-			return 1;
-		}
-		Arrays.sort(pairs,(o1,o2)->(o1[0]-o2[0]));
-		
-		int[] dp = new int[length];
-		Arrays.fill(dp, 1);
-		for(int i=1;i<length;++i) {
-			for(int j=0;j<i;j++) {
-				if(pairs[i][0] > pairs[j][1]) {
-				dp[i] = Math.max(dp[i], dp[j]+1);				
-				}
+	int length = pairs.length;
+	if(length == 1) {
+		return 1;
+	}
+	Arrays.sort(pairs,(o1,o2)->(o1[0]-o2[0]));
+	
+	int[] dp = new int[length];
+	Arrays.fill(dp, 1);
+	for(int i=1;i<length;++i) {
+		for(int j=0;j<i;j++) {
+			if(pairs[i][0] > pairs[j][1]) {
+			dp[i] = Math.max(dp[i], dp[j]+1);				
 			}
-			
-			
 		}
+	}
 		
-		int ans = 0;
-		for (int i : dp) {
-			ans = i > ans ? i : ans;
-		}
-		return ans;
+	int ans = 0;
+	for (int i : dp) {
+		ans = i > ans ? i : ans;
+	}
+	return ans;
 		
     }
-    ```
