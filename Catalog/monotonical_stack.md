@@ -8,7 +8,7 @@
 此时栈里是递增的，计算栈顶index，若不空则m=index-新栈顶index'（下一个数一定比栈顶小，找之间的所有数），若空则m=index（之前的所有项都出栈了，一定比当前数大）；n=i-index    
 否则当前数进栈
 
-`java`  
+```  
 final int BASE = 1_000_000_007;
 
 int sumSubarrayMins_1(int[] arr) {
@@ -29,4 +29,4 @@ int sumSubarrayMins_1(int[] arr) {
 	}
 	return (int)res;
 }
-``
+```
