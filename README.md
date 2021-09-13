@@ -14,7 +14,7 @@
 ### 搜索
 []
 ### 贪心
-[]
+-[贪心](https://github.com/IsTheBestLanguage/MyLeetcode/blob/main/Catalog/Greed.md)
 ### 排序
 
 ### 分治
