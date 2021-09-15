@@ -20,7 +20,7 @@
 ### 分治
 
 ### 二分查找
-
+-[二分查找](https://github.com/IsTheBestLanguage/MyLeetcode/blob/main/Catalog/binary_search.md)
 ### 树
 
 ### 位运算
