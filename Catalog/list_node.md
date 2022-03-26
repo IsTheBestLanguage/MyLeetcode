@@ -1,5 +1,5 @@
-# Leetcode
-# 2 add two numbers
+# 链表
+## leetcode 2 add two numbers
 ```java
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
