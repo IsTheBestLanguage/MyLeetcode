@@ -29,3 +29,4 @@
 
 ### 其它
 - [单调栈](https://github.com/IsTheBestLanguage/MyLeetcode/blob/main/Catalog/monotonical_stack.md)
+- [链表](https://github.com/IsTheBestLanguage/MyLeetcode/blob/main/Catalog/list_node.md)
