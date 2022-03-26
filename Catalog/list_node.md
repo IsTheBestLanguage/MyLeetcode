@@ -16,6 +16,9 @@ while(l1!=null || l2!=null){
 2. 两数之和 add two numbers
 ```java
 class Solution {
+
+    //1ms
+    //41.5MB
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
         ListNode answer = null;
