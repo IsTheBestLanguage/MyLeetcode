@@ -1,5 +1,18 @@
 # 链表
-## leetcode 2 add two numbers
+## 思想
+遍历不等长链表的方法：
+```java
+while(l1!=null || l2!=null){
+    //操作
+    
+    if(l1!=null)
+        l1 = l1.next;
+
+    if(l2!=null)
+        l2 = l2.next;
+}
+```
+2. 两数之和 add two numbers
 ```java
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
