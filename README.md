@@ -6,21 +6,21 @@
 
 ## 按专题
 ### 字符串
--[字符串](https://github.com/IsTheBestLanguage/MyLeetcode/blob/main/Catalog/string.md)
+- [字符串](https://github.com/IsTheBestLanguage/MyLeetcode/blob/main/Catalog/string.md)
 ### 数组与矩阵
 []
 ### 动态规划
--[动态规划](https://github.com/IsTheBestLanguage/MyLeetcode/blob/main/Catalog/dynamic_programming.md)
+- [动态规划](https://github.com/IsTheBestLanguage/MyLeetcode/blob/main/Catalog/dynamic_programming.md)
 ### 搜索
 []
 ### 贪心
--[贪心](https://github.com/IsTheBestLanguage/MyLeetcode/blob/main/Catalog/Greed.md)
+- [贪心](https://github.com/IsTheBestLanguage/MyLeetcode/blob/main/Catalog/Greed.md)
 ### 排序
 
 ### 分治
 
 ### 二分查找
--[二分查找](https://github.com/IsTheBestLanguage/MyLeetcode/blob/main/Catalog/binary_search.md)
+- [二分查找](https://github.com/IsTheBestLanguage/MyLeetcode/blob/main/Catalog/binary_search.md)
 ### 树
 
 ### 位运算
