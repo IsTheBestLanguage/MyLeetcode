@@ -3,8 +3,10 @@
 
    
       
-5. 最长回文子串 longest palindromic substring
-中心拓展（遍历回文子串中心）
+5. 最长回文子串 longest palindromic substring   
+
+中心拓展（遍历回文子串中心）   
+   
 ```java
 class Solution {
 
