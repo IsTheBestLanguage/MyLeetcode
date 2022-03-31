@@ -61,10 +61,12 @@ O(n^2),   n 是字符串的长度。动态规划的状态总数为 O(n^2)，对�
 
 ```java
 public String longestPalindrome(String s) {
+
     int length = s.length();
     boolean[][] P = new boolean[length][length];
     int maxLen = 0;
     String maxPal = "";
+    
     for (int len = 1; len <= length; len++) //遍历所有的长度
         for (int start = 0; start < length; start++) {
             int end = start + len - 1;
