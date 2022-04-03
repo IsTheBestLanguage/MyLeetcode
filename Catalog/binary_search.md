@@ -24,7 +24,7 @@ public int findPeakElement(int[] nums) {
  ```
     
        
-### 744. 寻找比目标字母大的最小字母 ind-smallest-letter-greater-than-target   
+### 744. 寻找比目标字母大的最小字母 find-smallest-letter-greater-than-target   
 二分；char可以直接比较；可以在二分后检查是否满足，无需专门处理循环比较   
 ```java
 //raw
