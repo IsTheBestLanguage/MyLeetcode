@@ -22,3 +22,47 @@ public int findPeakElement(int[] nums) {
         return left;
     }
     ```
+    
+       
+### 744. 寻找比目标字母大的最小字母 ind-smallest-letter-greater-than-target   
+二分；char可以直接比较；可以在二分后检查是否满足，无需专门处理循环比较   
+```java
+//raw
+class Solution {
+    public char nextGreatestLetter(char[] letters, char target) {
+        int n = letters.length;
+        if((int)letters[0] > (int)target || (int)letters[n-1] <= (int)target)  //beyond array
+            return letters[0];
+        
+        int le = 0, ri = n-1;
+        while(le<ri){
+            int mid = le + ri >> 1;
+            if((int)letters[mid] > (int)target ) {
+                if(mid-1 >= 0 && (int)letters[mid] <= (int)target)
+                    return letters[mid];
+                else
+                    ri = mid;
+            }
+            else  le = mid + 1;
+        }
+        return letters[le];
+    }
+}
+
+//modified
+class Solution {
+    
+    public char nextGreatestLetter(char[] letters, char target) {
+        int n = letters.length;
+        int l = 0, r = n - 1;
+        while (l < r) {
+            int mid = l + r >> 1;
+            if (letters[mid] > target) r = mid;
+            else l = mid + 1;
+        }
+        return letters[r] > target ? letters[r] : letters[0];
+    }
+}
+
+
+```
