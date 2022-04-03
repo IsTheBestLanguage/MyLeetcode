@@ -20,8 +20,8 @@ public int findPeakElement(int[] nums) {
         	else left = mid + 1;
         }
         return left;
-    }
-    ```
+ }
+ ```
     
        
 ### 744. 寻找比目标字母大的最小字母 ind-smallest-letter-greater-than-target   
