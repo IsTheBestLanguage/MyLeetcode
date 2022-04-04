@@ -11,11 +11,69 @@
 **线段树**  
 用于维护区间信息  
 线段树可以在O(logn)的时间复杂度内实现单点修改、区间修改、区间查询（区间求和，求区间最大值，求区间最小值）等操作。  
+线段树 segmentTree 是一个二叉树，每个结点保存数组 nums 在区间 [s,e] 的最小值、最大值或者总和等信息。线段树可以用树也可以用数组（堆式存储）来实现。对于数组实现，假设根结点的下标为 0，如果一个结点在数组的下标为 node，那么它的左子结点下标为 node×2+1，右子结点下标为 node×2+2
+
+
 ```java
+class NumArray {
+    Node[] tr;
+    class Node {
+        int l, r, v;
+        Node(int _l, int _r) {
+            l = _l; r = _r;
+        }
+    }
+    void build(int u, int l, int r) {
+        tr[u] = new Node(l, r);
+        if (l == r) return;
+        int mid = l + r >> 1;
+        build(u << 1, l, mid);
+        build(u << 1 | 1, mid + 1, r);
+    }
+    void update(int u, int x, int v) {
+        if (tr[u].l == x && tr[u].r == x) {
+            tr[u].v += v;
+            return ;
+        }
+        int mid = tr[u].l + tr[u].r >> 1;
+        if (x <= mid) update(u << 1, x, v);
+        else update(u << 1 | 1, x, v);
+        pushup(u);
+    }
+    int query(int u, int l, int r) {
+        if (l <= tr[u].l && tr[u].r <= r) return tr[u].v;
+        int mid = tr[u].l + tr[u].r >> 1;
+        int ans = 0;
+        if (l <= mid) ans += query(u << 1, l, r);
+        if (r > mid) ans += query(u << 1 | 1, l, r);
+        return ans;
+    }
+    void pushup(int u) {
+        tr[u].v = tr[u << 1].v + tr[u << 1 | 1].v;
+    }
+
+    int[] nums;
+    public NumArray(int[] _nums) {
+        nums = _nums;
+        int n = nums.length;
+        tr = new Node[n * 4];
+        build(1, 1, n);
+        for (int i = 0; i < n; i++) update(1, i + 1, nums[i]);
+    }
+    public void update(int index, int val) {
+        update(1, index + 1, val - nums[index]);
+        nums[index] = val;
+    }
+    public int sumRange(int left, int right) {
+        return query(1, left + 1, right + 1);
+    }
+}
+
 ```
-**树状数组**：  
+**树状数组**：binary indexed tree  
 用于维护区间信息；
-只能区域查询，不能区域更新；  
+只能区域查询，不能区域更新； 
+构造函数：O(nlogn),add 函数的时间复杂度是 O(logn),prefixSum 函数的时间复杂度是 O(logn)
 参考：https://leetcode-cn.com/problems/range-sum-query-mutable/solution/-by-hu-ge-8-t4rn/
 ```java
 class NumArray {
