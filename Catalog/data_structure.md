@@ -71,9 +71,9 @@ class NumArray {
 
 ```
 **树状数组**：binary indexed tree  
-用于维护区间信息；
-只能区域查询，不能区域更新； 
-构造函数：O(nlogn),add 函数的时间复杂度是 O(logn),prefixSum 函数的时间复杂度是 O(logn)
+用于维护区间信息；  
+只能区域查询，不能区域更新；   
+构造函数：O(nlogn),add 函数的时间复杂度是 O(logn),prefixSum 函数的时间复杂度是 O(logn)  
 参考：https://leetcode-cn.com/problems/range-sum-query-mutable/solution/-by-hu-ge-8-t4rn/
 ```java
 class NumArray {
