@@ -67,6 +67,7 @@ class Solution {
 
 ```
 ### 4. 寻找两个有序数组的中位数 median-of-two-sorted-arrays
-二分
+利用二分加速查找，问题转化为寻找第k小的数,k=(m+n)/2或(m+n)/2+1。  
 ```java
+
 ```
