@@ -2,9 +2,60 @@
 ## 掌握常见的特殊数据结构
 
 ### 307. 区域和检索-数组可修改 range-sum-query-mutable
+线段树和树状数组对比
+- 两者的时间\空间复杂度同级,但是树状数组的常数明显优于线段树
+- 线段树的适用范围大于树状数组,凡是可以用树状数组解决的问题,使用线段树一定能解决.
+- 树状数组的编程非常短,使用lowbit可以在几行代码内完成核心操作
+  
+
 线段树  
 ```java
 ```
-树状数组  
+树状数组：  
+索引+1，保证lowBit()操作，参考：https://leetcode-cn.com/problems/range-sum-query-mutable/solution/-by-hu-ge-8-t4rn/
 ```java
+class NumArray {
+    private int[] tree;
+    private int[] nums;
+
+    public NumArray(int[] nums) {
+        this.tree = new int[nums.length + 1];
+        this.nums = nums;
+        for (int i = 0; i < nums.length; i++) {
+            add(i + 1, nums[i]);
+        }
+    }
+
+    public void update(int index, int val) {
+        add(index + 1, val - nums[index]);
+        nums[index] = val;
+    }
+
+    public int sumRange(int left, int right) {  //前缀和之差
+        return prefixSum(right + 1) - prefixSum(left);
+    }
+    
+    //更新树状数组时使用 x += lowBit(x) 来寻找被影响的数组下标
+    //查询树状数组时使用 x -= lowBit(x) 来寻找小于x的下一个区间
+    private int lowBit(int x) {  //找到x的二进制数的最后一个1所表示的二进制
+        return x & -x;
+    }
+
+    private void add(int index, int val) {
+        while (index < tree.length) {
+            tree[index] += val;
+            index += lowBit(index);
+        }
+    }
+
+    private int prefixSum(int index) {
+        int sum = 0;
+        while (index > 0) {
+            sum += tree[index];
+            index -= lowBit(index);
+        }
+        return sum;
+    }
+}
+
 ```
