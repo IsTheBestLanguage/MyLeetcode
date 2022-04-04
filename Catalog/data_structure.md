@@ -8,11 +8,15 @@
 - 树状数组的编程非常短,使用lowbit可以在几行代码内完成核心操作
   
 
-线段树  
+**线段树**  
+用于维护区间信息  
+线段树可以在O(logn)的时间复杂度内实现单点修改、区间修改、区间查询（区间求和，求区间最大值，求区间最小值）等操作。  
 ```java
 ```
-树状数组：  
-索引+1，保证lowBit()操作，参考：https://leetcode-cn.com/problems/range-sum-query-mutable/solution/-by-hu-ge-8-t4rn/
+**树状数组**：  
+用于维护区间信息；
+只能区域查询，不能区域更新；  
+参考：https://leetcode-cn.com/problems/range-sum-query-mutable/solution/-by-hu-ge-8-t4rn/
 ```java
 class NumArray {
     private int[] tree;
