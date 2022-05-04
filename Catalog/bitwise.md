@@ -8,8 +8,8 @@
         * [1. 爬楼梯](#1-爬楼梯)
 
 <!-- GFM-TOC -->
-
-leetcode 136. 只出现一次的数字 single-number  
+  
+## 136. 只出现一次的数字 single-number  
 要求不使用额外的时间复杂度，容易想到位运算。利用异或的特性，相同的两数两两消除，最后剩下单独的数字。  
 ```java
 class Solution {
